@@ -9,7 +9,7 @@ import com.google.android.gms.ads.AdView;
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
-    private var mAdView: AdView? = null
+    lateinit var mAdView: AdView
 
     @Override
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         mAdView = findViewById(R.id.adView)
         val adRequest =
             AdRequest.Builder().build()
+        //mAdView.loadAd(adRequest)
         mAdView.loadAd(adRequest)
+
     }
 }
